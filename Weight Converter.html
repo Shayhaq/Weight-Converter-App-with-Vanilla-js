@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon"  type="image/svg+xml" href="img/icon.png">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <style>
+
+        
+         body{
+             margin-top: 70px;
+             background: #333;
+             color:#fff;
+             font-weight: 600;
+         }
+         .span{
+             color:rgba(6, 103, 250, 0.733);
+         }
+         .first{
+             color:rgb(0, 228, 102);
+             font-weight: 600;
+             text-shadow: 2px 3px 7px black;
+            
+         }
+         .
+     </style>
+    <title >Weight Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center mb-4 first" >
+                Weight <span class="span">Converter</span>
+                </h1>
+                <form action="">
+                    <div class="form-group">
+                        <input type="number" id="lbsInput"class="form-control from-control-lg"
+                        placeholder="Enter value as Pounds...">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="kiloInput"class="form-control from-control-lg"
+                        placeholder="Enter value as Kilo...">
+                    </div>
+                   
+                </form>
+                <div id="output">
+                    <div class="card bg-primary mb-3">
+                        <div class="card-block">
+                            <h4 class="ml-3">Grams:</h4>
+                            <div class="gramsInput ml-3"></div>
+                        </div>
+                    </div>
+                    <div class="card bg-success mb-3">
+                        <div class="card-block">
+                            <h4 class="ml-3">Kilogram:</h4>
+                            <div class="kiloInput ml-3"></div>
+                        </div>
+                    </div>
+                    <div class="card bg-danger">
+                        <div class="card-block">
+                            <h4 class="ml-3">Ounces:</h4>
+                            <div class="ouncesInput ml-3"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div id="outputkilo">
+                    <div class="card bg-primary mb-3">
+                        <div class="card-block">
+                            <h4 class="ml-3">Grams:</h4>
+                            <div class="gramsInputnw ml-3"></div>
+                        </div>
+                    </div>
+                    <div class="card bg-success mb-3">
+                        <div class="card-block">
+                            <h4 class="ml-3">Pounds:</h4>
+                            <div class="PoundsInput ml-3"></div>
+                        </div>
+                    </div>
+                    <div class="card bg-danger">
+                        <div class="card-block mb-3">
+                            <h4 class="ml-3">Ounces:</h4>
+                            <div class="ouncesInputnw ml-3"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+        </div>
+        </div>
+    </div>
+    <script>
+    document.querySelector('#output').style.display = 'none';
+    // kilo output
+    document.querySelector('#outputkilo').style.display = 'none';
+
+
+ document.getElementById('kiloInput').addEventListener('input', kilo);
+ function kilo (e){
+    document.querySelector('#output').style.display = 'none';
+    document.querySelector('#outputkilo').style.display = 'block';
+   
+    
+    let kilo = e.target.value;
+    document.querySelector('.gramsInputnw').innerHTML = (kilo*1000).toFixed(2);
+    document.querySelector('.PoundsInput').innerHTML = (kilo*2.205).toFixed(2);
+
+    document.querySelector('.ouncesInputnw').innerHTML = (kilo*35.274).toFixed(2);
+
+ }
+
+    let input = document.getElementById('lbsInput').addEventListener('input', function(e){
+        document.querySelector('#outputkilo').style.display = 'none';
+        document.querySelector('#output').style.display = 'block';
+   let lbs = e.target.value;
+   
+   document.querySelector('.gramsInput').innerHTML = (lbs/0.00222046).toFixed(2);
+   document.querySelector('.kiloInput').innerHTML = (lbs/2.205).toFixed(2);
+   document.querySelector('.ouncesInput').innerHTML = (lbs*16).toFixed(2);
+   document.querySelector('#kiloInput').innerHTML = (lbs*2.24).toFixed(2);
+   
+
+        });
+   
+        
+    </script>
+</body>
+</html>
