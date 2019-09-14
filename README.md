@@ -1,3 +1,3 @@
-# WeightCnverterApp
+# Weight-Converter-App
 
 This is a sample weight converter app that i have created with vanilla js
